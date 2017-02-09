@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-
-import codecs
-from setuptools import setup
+import os
+from setuptools import setup, find_packages
+from jupyter_alabaster_theme import __version__
 
 # Version info -- read without importing
 _locals = {}
@@ -9,31 +9,57 @@ with open('alabaster/_version.py') as fp:
     exec(fp.read(), None, _locals)
 version = _locals['__version__']
 
-# README into long description
-with codecs.open('README.rst', encoding='utf-8') as f:
-    readme = f.read()
+# Environment and packages
+# Don't copy Mac OS X resource forks on tar/gzip.
+os.environ['COPYFILE_DISABLE'] = "true"
 
+# Packages
+MOD_NAME = "jupyter_alabaster_theme"
+PKGS = [x for x in find_packages() if x.split('.')[0] == MOD_NAME]
+
+# Helpers
+def read_file(name):
+    """Read file name (without extension) to string."""
+    cur_path = os.path.dirname(__file__)
+    exts = ('txt', 'rst', 'md')
+    for ext in exts:
+        path = os.path.join(cur_path, '.'.join((name, ext)))
+        if os.path.exists(path):
+            with open(path, 'rt') as file_obj:
+                return file_obj.read()
+
+    return ''
+
+# Setup
 setup(
-    name='alabaster',
-    version=version,
-    description='A configurable sidebar-enabled Sphinx theme',
-    long_description=readme,
-    author='Jeff Forcier',
-    author_email='jeff@bitprophet.org',
+    name='jupyter-alabaster-theme',
+    version=__version__,
+    description='Jupyter Alabaster Theme',
+    long_description=read_file("README"),
+    author='Jeff Forcier, Project Jupyter, and contributors',
+    author_email='jupyter@googlegroups.com',
     url='https://alabaster.readthedocs.io',
-    packages=['alabaster'],
-    include_package_data=True,
+    license='BSD',
+
     classifiers=[
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Topic :: Documentation',
-        'Topic :: Software Development :: Documentation',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Topic :: Internet",
+        "Topic :: Software Development :: Documentation",
     ],
+
+    install_requires=[
+        "setuptools",
+        "recommonmark==0.4.0",
+        "nbsphinx",
+        "ipython"
+    ],
+
+    packages=PKGS,
+    include_package_data=True,
 )
