@@ -1,3 +1,6 @@
+# Jupyter Alabaster Theme
+A sphinx theme based on alabaster.
+
 ## Installation
 Install the package using PIP, from the root of this directory:
 
