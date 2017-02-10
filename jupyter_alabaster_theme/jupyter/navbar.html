@@ -1,0 +1,66 @@
+{% set links = [
+  ['Install'], ['About'], ['Resources'],
+  ['Documentation'],
+  ['NBViewer', 'https://nbviewer.jupyter.org'], ['Widgets'],
+  ['Blog', 'https://blog.jupyter.org'], ['Donate']
+] %}
+{% set pages = {'Install': 'install.html', 'About': 'about.html', 'Resources' : 'community.html',
+  'Widgets': 'widgets.html', 'Donate': 'donate.html' }
+%}
+{% set baseurl = 'http://jupyter.org' %}
+<nav class="navbar navbar-fixed-top" role="navigation" id="navbar" >
+        <div class="navbar-inner">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ baseurl }}/index.html">
+                  <img class="navbar-logo" src="{{ pathto("_static/_images/nav_logo.svg", 1) }}" alt="Jupyter logo">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    {% for name in links %}
+                      {% if name | length == 2 %}
+                           <li>
+                             <a href={{ name[1] }} class="tab" target="_blank">{{ name[0] }}</a>
+                           </li>
+                      {% else %}
+                        {% if name[0] == 'Documentation' %}
+                          <li>
+                            <a href="{{ pathto('index') }}"  class="tab navbar-active">{{ name[0] }}</a>
+                          </li>
+                        {% else %}
+                          <li>
+                            <a href="{{ baseurl }}/{{ pages[name[0]] }}" class="tab">{{ name[0] }}</a>
+                          </li>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+        <div class="docs-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li class="docs-breadcrumb-item"><a href="https://jupyter.org"><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-home.svg", 1) }}" / class="breadcrumb-home"></a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
+                    <li class="docs-breadcrumb-item"><a href="{{ pathto(master_doc) }}"> {{ project }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
+                    {% for doc in parents %}
+                    <li class="docs-breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
+                    {% endfor %}
+                    {% if title != project %}
+                    <li class="docs-breadcrumb-item">{{ title }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

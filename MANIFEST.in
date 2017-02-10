@@ -1,4 +1,14 @@
+# Top level.
+include *.txt
+include *.rst
+include *.md
+
+# Non-python files.
 include LICENSE
 include README.md
-recursive-include alabaster *.*
-recursive-exclude alabaster .*.swp
+recursive-include jupyter_alabaster_theme *
+recursive-exclude jupyter_alabaster_theme .*.swp
+
+# Extraneous files.
+global-exclude .DS_Store
+global-exclude *.pyc

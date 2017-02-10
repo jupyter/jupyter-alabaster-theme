@@ -1,19 +1,18 @@
-What is Alabaster?
-==================
+## Installation
+Install the package using PIP, from the root of this directory:
 
-Alabaster is a visually (c)lean, responsive, configurable theme for the `Sphinx
-<http://sphinx-doc.org>`_ documentation system. It is Python 2+3 compatible.
+```bash
+pip install .
+```
 
-It began as a third-party theme, and is still maintained separately, but as of
-Sphinx 1.3, Alabaster is an install-time dependency of Sphinx and is selected
-as the default theme.
+Edit the "conf.py" configuration file to point to the jupyter theme:
 
-Live examples of this theme can be seen on `this project's own website
-<http://alabaster.readthedocs.io>`_, `paramiko.org <http://paramiko.org>`_,
-`fabfile.org <http://fabfile.org>`_ and `pyinvoke.org <http://pyinvoke.org>`_.
+```python
+# At the top.
+from jupyter_alabaster_theme import *
+init_theme()
 
-For more documentation, please see http://alabaster.readthedocs.io.
+# ...
 
-.. note::
-    You can install the development version via ``pip install -e
-    git+https://github.com/bitprophet/alabaster/#egg=alabaster``.
+# Comment out the `html_theme =` line
+```

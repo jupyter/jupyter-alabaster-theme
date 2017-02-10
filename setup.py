@@ -3,12 +3,6 @@ import os
 from setuptools import setup, find_packages
 from jupyter_alabaster_theme import __version__
 
-# Version info -- read without importing
-_locals = {}
-with open('alabaster/_version.py') as fp:
-    exec(fp.read(), None, _locals)
-version = _locals['__version__']
-
 # Environment and packages
 # Don't copy Mac OS X resource forks on tar/gzip.
 os.environ['COPYFILE_DISABLE'] = "true"

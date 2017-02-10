@@ -1,0 +1,74 @@
+.jupyter-widget-header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 0 0 16px 0;
+}
+
+.jupyter-widget-header h2 {
+    display: inline;
+}
+
+.img-scaling {
+    height: 32px;
+    vertical-align: top;
+}
+
+.gallery-title {
+    font-size: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+  margin-bottom: 26px;
+  margin-top: 26px;
+  min-height: 1100px;
+}
+
+.tabs-left > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a{
+  margin-bottom: 3px;
+  margin-right: 0;
+  min-width: 200px;
+}
+
+.tabs-left > .nav-tabs {
+  border-right: 1px solid #ddd;
+  float: left;
+  height: 1100px;
+  margin-right: 19px;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  margin-right: -1px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
