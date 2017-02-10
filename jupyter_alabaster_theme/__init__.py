@@ -62,7 +62,6 @@ extensions = [
 
 html_sidebars = {
    '**': [
-        'searchbox.html',
         'custom_navigation.html'
     ]
 }
