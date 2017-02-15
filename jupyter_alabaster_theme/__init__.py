@@ -2,7 +2,6 @@
 import os
 import subprocess
 import sys
-from jupyter_alabaster_theme import _version as version
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
@@ -16,11 +15,8 @@ def bash(fileName):
     sys.stdout.flush()
     subprocess.call("bash {}".format(fileName), shell=True)
 
-VERSION = (0, 0, 6)
-__version__ = ".".join(str(v) for v in VERSION)
-__version_full__ = __version__
-theme_version = __version__
-
+__version_info__ = (0, 0, 6)
+__version__ = '.'.join(map(str, __version_info__))
 
 def get_path():
     """
@@ -30,11 +26,11 @@ def get_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 def update_context(app, pagename, templatename, context, doctree):
-    context['alabaster_version'] = version.__version__
+    context['jupyter_alabaster_theme_version'] = __version__
 
 def setup(app):
     app.connect('html-page-context', update_context)
-    return {'version': version.__version__,
+    return {'version': __version__,
             'parallel_read_safe': True}
 
 # The suffix(es) of source filenames.
