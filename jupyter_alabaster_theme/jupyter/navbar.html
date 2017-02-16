@@ -52,12 +52,14 @@
             <div class="container">
                 <ul>
                     <li class="docs-breadcrumb-item"><a href="https://jupyter.org"><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-home.svg", 1) }}" / class="breadcrumb-home"></a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
-                    <li class="docs-breadcrumb-item"><a href="{{ pathto(master_doc) }}"> {{ project }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
-                    {% for doc in parents %}
-                    <li class="docs-breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
-                    {% endfor %}
-                    {% if title != project %}
-                    <li class="docs-breadcrumb-item">{{ title }}</li>
+                    {% if title == project %}
+                    <li class="docs-breadcrumb-item"><a href="{{ pathto(master_doc) }}"> {{ project }}</a></li>
+                    {% else %}
+                      <li class="docs-breadcrumb-item"><a href="{{ pathto(master_doc) }}"> {{ project }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
+                      {% for doc in parents %}
+                        <li class="docs-breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a><img src="{{ pathto("_static/_images/jupytertheme-images/breadcrumb-separator.svg", 1) }}" class="breadcrumb-separator"/></li>
+                      {% endfor %}
+                      <li class="docs-breadcrumb-item">{{ title }}</li>
                     {% endif %}
                 </ul>
             </div>
