@@ -336,3 +336,9 @@ div.admonition p.admonition-title {
 .toc-backref:hover {
     color: #424242;
 }
+.footer-text {
+    margin: 0px;
+}
+.navbar {
+  margin-bottom: 0px;
+}
