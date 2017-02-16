@@ -166,7 +166,9 @@ table.footnote, table.footnote td {
 }
 
 ul.search li {
-  background-image: url(../_images/file.svg) !important;
+  background-image: url(../_images/file.svg);
+  background-repeat: no-repeat;
+  background-position-y: 6px;
   list-style-type: none;
   padding: 5px 0 5px 24px;
 }
