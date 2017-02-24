@@ -7,7 +7,6 @@
     :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 #}
-{%- if pagename != "custom_search" and builder != "singlehtml" %}
 <div id="searchbox" style="display: none" role="search">
     <form class="search" action="{{ pathto('custom_search') }}" method="get">
       <div>
@@ -19,4 +18,3 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-{%- endif %}
