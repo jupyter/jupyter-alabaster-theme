@@ -1,0 +1,17 @@
+{% set theTocTree = toctree()
+    | replace("</a>", "")
+    | replace(" href=\"", "></a>")
+    | replace("</li>", "</li>;")
+    | striptags
+    | replace("\">", "%") %}
+{% set theTocTree = theTocTree.split(";") %}
+
+<div>
+{% for element in theTocTree %}
+    {% set el = element.split("%") %}
+    <li> Element: {{ el }} </li>
+    {% set url = el[0] | trim | safe %}
+    <li> URL: {{ url }} </li>
+    {% set entry = el[1] | trim | safe %}
+    <li> Entry: {{ entry }} </li>
+{% endfor %}

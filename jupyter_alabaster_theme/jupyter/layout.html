@@ -53,6 +53,7 @@
   <div class="container">
     <div class="row">
       {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
+      {% include "mobile_sidebar.html" %}
       <div class="{{ bs_span_prefix }}{{ bs_content_width }} content">
         {% block body %}{% endblock %}
       </div>
