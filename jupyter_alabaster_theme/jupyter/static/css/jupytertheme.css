@@ -3,6 +3,11 @@ body {
     background-color: white;
 }
 
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
 div.related {
     margin-bottom: 1.2em;
     padding: 0.5em 0;
@@ -292,6 +297,9 @@ p.caption {
     text-decoration: none;
     border-bottom: none;
 }
+.content {
+  margin-bottom: 48px;
+}
 .content h1, .bs-sidenav h1 {
     font-size: 36px;
     font-weight: 400;
@@ -311,25 +319,34 @@ p.caption {
     line-height: 24px;
 }
 .content .reference {
+    color: #D95E1C;
     border-bottom: none;
+    font-weight: 500;
 }
 .content .reference:hover {
     border-bottom: none;
     text-decoration: none;
 }
+.content .reference .internal {
+
+}
 div.admonition, div.topic {
+    border: 1px solid #E0E0E0;
     margin: 20px 0px;
     padding: 16px 24px;
 }
 div.topic .topic-title {
-    font-size: 18px;
+    font-size: 20px;
 }
 div.admonition .docutils {
     margin-top: 12px;
 }
 div.admonition p.admonition-title {
+    font-family: inherit;
     font-size: 20px;
-    margin-bottom:
+}
+div.admonition dl dd {
+  margin: 0px 0px 4px 28px;
 }
 .docs-breadcrumbs {
     height: 36px;
@@ -351,6 +368,9 @@ div.admonition p.admonition-title {
     color: white;
     letter-spacing: .8px;
 }
+.figure img {
+  width: 100%;
+}
 .breadcrumb-home {
     height: 24px;
 }
@@ -369,4 +389,7 @@ div.admonition p.admonition-title {
 }
 .navbar {
   margin-bottom: 0px;
+}
+.section img {
+  width: 100%;
 }
