@@ -34,11 +34,6 @@
     function will automatically search for all of the words. Pages
     containing fewer words won't appear in the result list.{% endtrans %}
   </p> -->
-  <form action="" method="get">
-    <input type="text" name="q" class="docs-search-input" value="" />
-    <input class="docs-search-submit" type="submit" value="" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
   {% if search_performed %}
     {% if not search_results %}
       <p>{{ _('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.') }}</p>

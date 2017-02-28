@@ -66,3 +66,5 @@ html_additional_pages = {
     'searchresults': 'custom_searchresults.html',
     'custom_search': 'custom_search.html'
 }
+
+html_last_updated_fmt = "%a, %b %d, %Y"
