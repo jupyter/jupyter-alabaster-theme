@@ -5,7 +5,6 @@
   | replace('<ul class="current">', "List: ")
   | replace("</ul>", "")
 %}
-{% include "custom_searchbox.html" %}
 <div>
   {% set list = theTocTree.split("Header: ") %}
   {% for section in list[1:] %}
@@ -13,11 +12,11 @@
     <div class = "dropdown">
       {% for item in subSection %}
         {% if loop.index == 1 %}
-        <div type = "button" class = "btn dropdown-toggle" data-toggle = "dropdown">
+        <div type = "button" class = "btn dropdown" data-toggle = "collapse" data-target = ".menu">
           <h3> {{ item | striptags }}</h3>
         </div>
         {% else %}
-        <ul class = "dropdown-menu">
+        <ul class = "collapse menu">
           {{ item }}
         </ul>
         {% endif %}
@@ -25,24 +24,3 @@
     </div>
   {% endfor %}
 </div>
-
-
-
-
-
-
-
-{#
-{% macro toctree(navlist) %}
-<h2><span>Test</span></h2>
-  {% for nav in navlist %}
-    <h2><span>Here is a nav</span></h2>
-    <li> nav: {{ nav }}
-    {% if nav.children %}
-      {{ toctree(nav.children)|indent(4, true) }}
-    {% endif %}
-  {% endfor %}
-{% endmacro %}
-
-{{ toctree(navlist) }}
-#}

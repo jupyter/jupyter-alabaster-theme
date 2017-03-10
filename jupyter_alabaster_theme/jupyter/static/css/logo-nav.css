@@ -706,6 +706,9 @@ body {
     .navbar-toggle {
         margin-top: 20px;
     }
+    .mobile-test {
+      display: none;
+    }
 }
 @media (max-width: 768px) {
     p {
@@ -748,6 +751,9 @@ body {
     }
     .jumbotron {
         margin-right: 5%;
+    }
+    .desktop-test {
+      display: none;
     }
 }
 /* Extra small devices (these are mostly fixes to make sure elements act correctly to look good) */

@@ -2,7 +2,7 @@
   <a href="{{ pathto(master_doc) }}">{{ project }}</a>
 </h1>
 {% include "custom_searchbox.html" %}
-{{ toctree(includehidden=theme_sidebar_includehidden, collapse=False, maxdepth=2) }}
+{{ toctree(includehidden=theme_sidebar_includehidden, collapse=theme_sidebar_collapse, maxdepth=2) }}
 {% if theme_extra_nav_links %}
 <hr />
 <ul>
