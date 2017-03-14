@@ -7,6 +7,10 @@
 %}
 <div>
   {% set list = theTocTree.split("Header: ") %}
+  <div class="mobile-nav-current-dropdown">
+      <h3 class="mobile-nav-current-section">User Documentation</h3>
+      <h2 class="mobile-nav-current-page">Installation</h2>
+  </div>
   <div>
   {% for section in list[1:] %}
     {% set subSection = section.split("List: ") %}

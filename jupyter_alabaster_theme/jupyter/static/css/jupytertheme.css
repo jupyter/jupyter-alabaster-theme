@@ -312,6 +312,27 @@ p.caption {
     color: black;
 }
 /* Mobile Navbar Styling */
+
+.mobile-nav-current-dropdown {
+    padding: 16px 20px;
+    border: 2px solid #BDBDBD;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.mobile-nav-current-section {
+    margin: 0px;
+    color: #757575;
+    padding-bottom: 4px;
+    font-weight: 400;
+}
+
+.mobile-nav-current-page {
+    margin-top: 0px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
 .mobile-nav-section {
   padding: 0px;
   width: 100%;
