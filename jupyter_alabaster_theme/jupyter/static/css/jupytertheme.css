@@ -3,6 +3,10 @@ body {
     background-color: white;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
+
 h1, .h1, h2, .h2, h3, .h3 {
   margin-top: 28px;
   margin-bottom: 12px;
@@ -307,6 +311,37 @@ p.caption {
 .bs-sidenav h1 a {
     color: black;
 }
+/* Mobile Navbar Styling */
+.mobile-nav-section {
+  padding: 0px;
+  width: 100%;
+}
+
+.mobile-nav-header {
+  margin: 12px 0px;
+  float: left;
+}
+
+.mobile-nav-items {
+  padding-left: 16px;
+}
+
+.mobile-nav-expand {
+  float: right;
+  padding-top: 12px;
+}
+
+.mobile-nav-expand-icon {
+
+}
+
+.toctree-l1 > a.reference {
+  color: #757575;
+  font-size: 18px;
+  text-decoration: none;
+  border-bottom: none;
+}
+
 .content h2 {
     font-size: 28px;
     font-weight: 400;
@@ -386,9 +421,6 @@ div.admonition dl dd {
 }
 .footer-text {
     margin: 0px;
-}
-.navbar {
-  margin-bottom: 0px;
 }
 .section img {
   width: 100%;

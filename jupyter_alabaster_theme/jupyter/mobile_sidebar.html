@@ -7,20 +7,25 @@
 %}
 <div>
   {% set list = theTocTree.split("Header: ") %}
+  <div>
   {% for section in list[1:] %}
     {% set subSection = section.split("List: ") %}
     <div class = "dropdown">
       {% for item in subSection %}
         {% if loop.index == 1 %}
-        <div type = "button" class = "btn dropdown" data-toggle = "collapse" data-target = ".menu">
-          <h3> {{ item | striptags }}</h3>
+        <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".menu">
+          <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
+          <div class="mobile-nav-expand">
+            <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
+          </div>
         </div>
         {% else %}
-        <ul class = "collapse menu">
+        <ul class = "collapse menu mobile-nav-items">
           {{ item }}
         </ul>
         {% endif %}
       {% endfor %}
     </div>
   {% endfor %}
+  </div>
 </div>
