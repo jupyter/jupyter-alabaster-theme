@@ -18,7 +18,7 @@
       {% set headerTarget = "heading" ~ loop.index %}
       {% for item in subSection %}
         {% if loop.index == 1 %}
-        <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = {{ "." ~ headerTarget }}>
+        <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = "{{ "." ~ headerTarget }}">
           <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
           <div class="mobile-nav-expand">
             <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
