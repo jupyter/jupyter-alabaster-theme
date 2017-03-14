@@ -318,8 +318,9 @@ p.caption {
 }
 
 .mobile-nav-header {
-  margin: 12px 0px;
-  float: left;
+    font-size: 20px;
+    margin: 12px 0px;
+    float: left;
 }
 
 .mobile-nav-items {
@@ -332,7 +333,10 @@ p.caption {
 }
 
 .mobile-nav-expand-icon {
-
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
 }
 
 .toctree-l1 > a.reference {
