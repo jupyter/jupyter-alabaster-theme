@@ -8,8 +8,11 @@
 <div>
   {% set list = theTocTree.split("Header: ") %}
   <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
+    <div class="mobile-nav-current">
       <h3 class="mobile-nav-current-section">User Documentation</h3>
       <h2 class="mobile-nav-current-page">Installation</h2>
+    </div>
+    <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
   </div>
   <div  id="sectionList" class = "collapse">
   {% for section in list[1:] %}

@@ -313,6 +313,11 @@ p.caption {
 }
 /* Mobile Navbar Styling */
 
+.mobile-nav-current {
+  max-width: 90%;
+  display: inline-block;
+}
+
 .mobile-nav-current-dropdown {
     padding: 16px 20px;
     border: 2px solid #BDBDBD;
@@ -338,6 +343,13 @@ p.caption {
   width: 100%;
 }
 
+.mobile-nav-section:active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
 .mobile-nav-header {
     font-size: 20px;
     margin: 12px 0px;
@@ -354,10 +366,19 @@ p.caption {
 }
 
 .mobile-nav-expand-icon {
-    -webkit-transition: .4s ease-in-out;
-    -moz-transition: .4s ease-in-out;
-    -o-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    float: right;
+}
+
+.close-icon {
+  /* Add this class to a mobile nav item expand icon to rotate */
+  -webkit-transform: rotate(45deg);
+  -mox-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .toctree-l1 > a.reference {

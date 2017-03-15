@@ -1,6 +1,11 @@
 $(document).on('ready', function() {
-    $('.mobile-nav-section').on('click', function() {
-        console.log('pressed');
-        $('.mobile-nav-expand-icon').css('transform', 'rotate(45deg)');
+    $('.mobile-nav-section, .mobile-nav-current-dropdown').on('click', function() {
+        var openToggle = $(this).find('.mobile-nav-expand-icon');
+        if (openToggle.hasClass('close-icon')) {
+          openToggle.removeClass('close-icon');
+        }
+        else {
+          openToggle.addClass('close-icon');
+        }
     });
 });
