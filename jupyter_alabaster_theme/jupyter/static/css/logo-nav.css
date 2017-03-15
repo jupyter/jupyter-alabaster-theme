@@ -688,7 +688,9 @@ body {
     }
     .nav>li>a {
         font-size: 13px;
-        letter-spacing: 1px;
+        letter-spacing: .4px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 }
 /* Small devices (tablets, 768px and up) */
@@ -754,6 +756,11 @@ body {
     }
     .desktop-test {
       display: none;
+    }
+    .nav>li>a {
+        letter-spacing: 1px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 /* Extra small devices (these are mostly fixes to make sure elements act correctly to look good) */
