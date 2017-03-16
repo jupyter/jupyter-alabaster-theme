@@ -360,6 +360,11 @@ p.caption {
   padding-left: 16px;
 }
 
+.mobile-nav-items .toctree-l1 .current {
+  color: #F37726;
+  font-weight: 500;
+}
+
 .top-mobile-nav-expand {
   float: right;
   /* Half of the height of the top navigation box */
