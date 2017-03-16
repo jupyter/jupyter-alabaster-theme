@@ -1,5 +1,5 @@
 @import 'css/alabaster.css';
-@import 'css/bootstrap.css';
+@import 'css/bootstrap.min.css';
 @import 'css/logo-nav.css';
 @import 'css/syntax.css';
 @import 'css/jupytertheme.css';

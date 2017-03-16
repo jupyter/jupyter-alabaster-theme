@@ -58,7 +58,7 @@
       <div class="desktop-test">
         {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
       </div>
-      <div class="{{ bs_span_prefix }}{{ bs_content_width }} content">
+      <div class="col-sm-8 {{ bs_span_prefix }}{{ bs_content_width }} content">
         {% block body %}{% endblock %}
       </div>
       {% block sidebar2 %} {# possible location for sidebar #} {% endblock %}
