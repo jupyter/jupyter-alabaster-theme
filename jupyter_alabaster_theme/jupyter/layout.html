@@ -38,7 +38,7 @@
 {%- set bs_content_width = render_sidebar and "9" or "12"%}
 {%- macro bsidebar() %}
       {%- if render_sidebar %}
-      <div class="{{ bs_span_prefix }}3">
+      <div class="col-sm-4 {{ bs_span_prefix }}3">
         <div id="sidebar" class="bs-sidenav" role="complementary">
           {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
