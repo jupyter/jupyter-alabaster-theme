@@ -302,6 +302,8 @@ p.caption {
     border-bottom: none;
 }
 .content {
+  padding-left: 24px;
+  padding-right: 24px;
   margin-bottom: 48px;
 }
 .content h1, .bs-sidenav h1 {
@@ -474,7 +476,7 @@ a.headerlink:hover {
     height: 24px;
 }
 .breadcrumb-separator {
-    height: 16px;
+    height: 12px;
     padding: 0px 12px;
 }
 .toc-backref {
@@ -488,4 +490,16 @@ a.headerlink:hover {
 }
 .section img {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+  .navbar {
+    border-bottom: 1px solid #E0E0E0;
+  }
+  .docs-breadcrumbs {
+    display: none;
+  }
 }
