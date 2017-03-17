@@ -538,6 +538,10 @@ body {
     background-color: #F27624;
 }
 
+.docs-mobile-nav {
+  padding-left: 12px;
+  padding-right: 12px;
+}
 /* Bootstrap Breakpoint Media Queries */
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -708,7 +712,7 @@ body {
     .navbar-toggle {
         margin-top: 20px;
     }
-    .mobile-test {
+    .docs-mobile-nav {
       display: none;
     }
 }
@@ -754,7 +758,7 @@ body {
     .jumbotron {
         margin-right: 5%;
     }
-    .desktop-test {
+    .docs-desktop-nav {
       display: none;
     }
     .nav>li>a {
