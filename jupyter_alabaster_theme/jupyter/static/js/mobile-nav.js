@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+$(function() {
     $('.mobile-nav-section, .mobile-nav-current-dropdown').on('click', function() {
         var openToggle = $(this).find('.mobile-nav-expand-icon');
         if (openToggle.hasClass('close-icon')) {
