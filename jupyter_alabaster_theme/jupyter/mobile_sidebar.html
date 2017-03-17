@@ -1,0 +1,41 @@
+{% set theTocTree = toctree(collapse = False, maxdepth = 1)
+  | replace('<p class="caption">', "Header: ")
+  | replace('</p>', "")
+  | replace("<ul>", "List: ")
+  | replace('<ul class="current">', "List: ")
+  | replace("</ul>", "")
+%}
+<div>
+  {% set list = theTocTree.split("Header: ") %}
+  <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
+    <div class="mobile-nav-current">
+      <h3 class="mobile-nav-current-section">User Documentation</h3>
+      <h2 class="mobile-nav-current-page"> {{ title }} </h2>
+    </div>
+    <div class="top-mobile-nav-expand">
+      <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
+    </div>
+  </div>
+  <div  id="sectionList" class = "collapse">
+  {% for section in list[1:] %}
+    {% set subSection = section.split("List: ") %}
+    <div class = "dropdown">
+      {% set headerTarget = "heading" ~ loop.index %}
+      {% for item in subSection %}
+        {% if loop.index == 1 %}
+        <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = "{{ "." ~ headerTarget }}">
+          <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
+          <div class="mobile-nav-expand">
+            <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
+          </div>
+        </div>
+        {% else %}
+        <ul class = "{{ headerTarget ~ " collapse mobile-nav-items" }}">
+          {{ item }}
+        </ul>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+  </div>
+</div>

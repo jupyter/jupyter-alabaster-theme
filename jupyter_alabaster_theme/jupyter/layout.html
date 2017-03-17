@@ -1,5 +1,5 @@
 {%- extends "basic/layout.html" %}
-{% set extra_scripts = ["_static/js/bootstrap.min.js", "_static/js/scroll.js"] %}
+{% set extra_scripts = ["_static/js/bootstrap.min.js", "_static/js/scroll.js", "_static/js/mobile-nav.js"] %}
 {% set script_files = script_files + extra_scripts %}
 
 {%- block extrahead %}
@@ -41,7 +41,7 @@
 {%- set bs_content_width = render_sidebar and "9" or "12"%}
 {%- macro bsidebar() %}
       {%- if render_sidebar %}
-      <div class="{{ bs_span_prefix }}3">
+      <div class="col-sm-4 {{ bs_span_prefix }}3">
         <div id="sidebar" class="bs-sidenav" role="complementary">
           {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
@@ -54,9 +54,14 @@
 {% block content %}
   {% include "navbar.html" %}
   <div class="container">
+    <div class = "mobile-test">
+      {% include "mobile_sidebar.html" %}
+    </div>
     <div class="row">
-      {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
-      <div class="{{ bs_span_prefix }}{{ bs_content_width }} content">
+      <div class="desktop-test">
+        {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
+      </div>
+      <div class="col-sm-8 {{ bs_span_prefix }}{{ bs_content_width }} content">
         {% block body %}{% endblock %}
       </div>
       {% block sidebar2 %} {# possible location for sidebar #} {% endblock %}
