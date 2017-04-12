@@ -1,5 +1,6 @@
 {% set theTocTree = toctree(includehidden=theme_sidebar_includehidden, collapse=False, maxdepth=2)
   | replace('<ul class="current">', "", 1)
+  | replace('<ul class="current">', "Second ")
   | replace('<ul>', "Second ")
   | replace('</ul>', "")
   | replace('<li class="toctree-l1 current">', "First ")
@@ -7,13 +8,16 @@
   | replace('</li>', "")
 %}
 
-
 <div>
   {# Start by splitting the TocTree by 1st level children #}
   {% set list = theTocTree.split("First ") %}
   <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
     <div class="mobile-nav-current">
-      <h3 class="mobile-nav-current-section">User Documentation</h3>
+      {% if parents|length >= 1 %}
+        <h3 class="mobile-nav-current-section"> {{ parents[0].title }} </h3>
+      {% else %}
+        <h3 class="mobile-nav-current-section"> {{ title }} </h3>
+      {% endif %}
       <h2 class="mobile-nav-current-page"> {{ title }} </h2>
     </div>
     <div class="top-mobile-nav-expand">
