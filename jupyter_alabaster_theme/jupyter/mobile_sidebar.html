@@ -1,12 +1,16 @@
-{% set theTocTree = toctree(collapse = False, maxdepth = 1)
-  | replace('<p class="caption">', "Header: ")
-  | replace('</p>', "")
-  | replace("<ul>", "List: ")
-  | replace('<ul class="current">', "List: ")
-  | replace("</ul>", "")
+{% set theTocTree = toctree(includehidden=theme_sidebar_includehidden, collapse=False, maxdepth=2)
+  | replace('<ul class="current">', "", 1)
+  | replace('<ul>', "Second ")
+  | replace('</ul>', "")
+  | replace('<li class="toctree-l1 current">', "First ")
+  | replace('<li class="toctree-l1">', "First ")
+  | replace('</li>', "")
 %}
+
+
 <div>
-  {% set list = theTocTree.split("Header: ") %}
+  {# Start by splitting the TocTree by 1st level children #}
+  {% set list = theTocTree.split("First ") %}
   <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
     <div class="mobile-nav-current">
       <h3 class="mobile-nav-current-section">User Documentation</h3>
@@ -16,26 +20,46 @@
       <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
     </div>
   </div>
-  <div  id="sectionList" class = "collapse">
-  {% for section in list[1:] %}
-    {% set subSection = section.split("List: ") %}
-    <div class = "dropdown">
-      {% set headerTarget = "heading" ~ loop.index %}
-      {% for item in subSection %}
-        {% if loop.index == 1 %}
-        <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = "{{ "." ~ headerTarget }}">
-          <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
-          <div class="mobile-nav-expand">
-            <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
-          </div>
-        </div>
-        {% else %}
-        <ul class = "{{ headerTarget ~ " collapse mobile-nav-items" }}">
-          {{ item }}
-        </ul>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% endfor %}
+
+  <div id="sectionList">
+    {# Skip the first section as it is a '\n' resulting from splitting the string #}
+    {% for section in list[1:] %}
+      {# Split each 1st level child into subSections that may contain a 2nd level children #}
+      {% set subSection = section.split("Second ") %}
+      <div class="dropdown">
+        {% set headerTarget = "heading" ~ loop.index %}
+        {% for item in subSection %}
+          {# first (and only) item is a 1st level child #}
+          {% if subSection|length == 1 %}
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = "{{ "." ~ headerTarget }}">
+              <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
+              </div>
+            </div>
+            <ul class = "{{ headerTarget ~ " collapse mobile-nav-items" }}">
+              <li class = "toctree-l2">
+                {{ item }}
+              </li>
+            </ul>
+          {% elif loop.index == 1 %}
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = "{{ "." ~ headerTarget }}">
+              <h3 class="mobile-nav-header"> {{ item | striptags }}</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="{{ pathto("_static/_images/jupytertheme-images/expand.svg", 1) }}" alt="expand icon"/>
+              </div>
+            </div>
+          {# all other children are 2nd level children #}
+          {% else %}
+            <ul class = "{{ headerTarget ~ " collapse mobile-nav-items" }}">
+              <li class = "toctree-l2">
+                {{ subSection[0] }}
+              </li>
+              {{ item }}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
   </div>
 </div>
