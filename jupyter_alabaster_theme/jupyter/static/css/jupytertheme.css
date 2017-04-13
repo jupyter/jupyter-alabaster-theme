@@ -427,6 +427,11 @@ p.caption {
   font-weight: 500;
 }
 
+.mobile-nav-items .toctree-l2 .current {
+  color: #F37726;
+  font-weight: 500;
+}
+
 .top-mobile-nav-expand {
   float: right;
   /* 17.5px is half of the height of the top navigation box */
@@ -455,6 +460,13 @@ p.caption {
 }
 
 .toctree-l1 > a.reference {
+  color: #757575;
+  font-size: 18px;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.toctree-l2 > a.reference {
   color: #757575;
   font-size: 18px;
   text-decoration: none;
