@@ -17,14 +17,6 @@
   {# this is used when loading the search index using $.ajax fails,
      such as on Chrome for documents on localhost #}
   <script type="text/javascript" id="searchindexloader"></script>
-  <script type="text/javascript">
-    var bigHeader = document.createElement('h1');
-    bigHeader.appendChild(document.createTextNode('Search Results'));
-    window.onload = function() {
-      var searchBlock = document.getElementById('search-results');
-      searchBlock.replaceChild(bigHeader, searchBlock.childNodes[1]);
-    };
-  </script>
   {{ super() }}
 {% endblock %}
 {% block body %}
