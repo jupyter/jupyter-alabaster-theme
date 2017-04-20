@@ -628,7 +628,7 @@ p.caption {
 @media (max-width: 992px) {
     div.follow {
         float: left;
-        margin-top: 0px;
+        margin-top: 8px;
         margin-bottom: 20px;
     }
     .navbar-text {
