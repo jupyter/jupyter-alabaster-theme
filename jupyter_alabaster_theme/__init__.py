@@ -63,7 +63,6 @@ html_sidebars = {
 }
 
 html_additional_pages = {
-    'searchresults': 'custom_searchresults.html',
     'custom_search': 'custom_search.html'
 }
 
