@@ -712,6 +712,9 @@ p.caption {
     .docs-mobile-nav {
       display: none;
     }
+    .navbar-text {
+        margin-left: 0px;
+    }
 }
 @media (max-width: 768px) {
     body {
