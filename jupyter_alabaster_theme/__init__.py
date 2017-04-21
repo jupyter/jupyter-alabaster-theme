@@ -15,7 +15,7 @@ def bash(fileName):
     sys.stdout.flush()
     subprocess.call("bash {}".format(fileName), shell=True)
 
-__version_info__ = (0, 0, 6)
+__version_info__ = (0, 1, 0)
 __version__ = '.'.join(map(str, __version_info__))
 
 def get_path():
