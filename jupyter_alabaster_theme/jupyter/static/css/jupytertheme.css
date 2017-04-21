@@ -418,6 +418,8 @@ p.caption {
     font-size: 20px;
     margin: 12px 0px;
     float: left;
+    text-align: left;
+    white-space: normal;
 }
 
 .mobile-nav-items {
