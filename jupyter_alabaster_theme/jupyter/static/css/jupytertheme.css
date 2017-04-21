@@ -87,6 +87,8 @@ h1, .h1, h2, .h2, h3, .h3 {
 /* Footer styling */
 .custom-footer {
     background-color: #979797;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .custom-footer p {
@@ -507,6 +509,9 @@ p.caption {
     list-style-type: none;
     margin: 5px 0px;
 }
+.bs-sidenav {
+    margin-bottom: 40px;
+}
 .bs-sidenav .toctree-l1 .current {
     color: #F37726;
     font-weight: 500;
@@ -620,6 +625,16 @@ p.caption {
 /* Bootstrap Breakpoint Media Queries */
 
 /* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    div.follow {
+        float: left;
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+    .navbar-text {
+        margin-left: 0px;
+    }
+}
 @media (min-width: 992px) {
     p {
         font-size: 16px;
@@ -697,6 +712,9 @@ p.caption {
     .docs-mobile-nav {
       display: none;
     }
+    .navbar-text {
+        margin-left: 0px;
+    }
 }
 @media (max-width: 768px) {
     body {
@@ -755,7 +773,7 @@ p.caption {
 /* Extra small devices (these are mostly fixes to make sure elements act correctly to look good) */
 @media (min-width: 509px) {
     .follow {
-        float: right !important;
+        float: right;
     }
     .custom-footer ul {
         float: left;
@@ -763,6 +781,7 @@ p.caption {
 }
 @media(max-width:509px) {
     .follow {
+        float: none !important;
         display: block;
         margin: 0 auto;
     }
