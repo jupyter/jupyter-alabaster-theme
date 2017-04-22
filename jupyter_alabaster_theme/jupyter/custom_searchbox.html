@@ -10,7 +10,7 @@
 <div id="searchbox" role="search">
     <form class="search" action="{{ pathto('custom_search') }}" method="get">
       <div>
-        <input type="text" class="docs-search-input" name="q" />
+        <input type="text" placeholder= "{{"Search " ~ project }}" class="docs-search-input" name="q" />
         <input type="submit" class="docs-search-submit" value="{{ _('') }}" />
       </div>
       <input type="hidden" name="check_keywords" value="yes" />
