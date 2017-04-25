@@ -422,6 +422,18 @@ p.caption {
     white-space: normal;
 }
 
+h3.mobile-nav-header a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+h3.mobile-nav-header a:hover {
+  outline: none;
+  border: none;
+}
+
 .mobile-nav-items {
   padding-left: 16px;
 }
