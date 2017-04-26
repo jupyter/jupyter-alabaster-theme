@@ -420,6 +420,7 @@ p.caption {
     float: left;
     text-align: left;
     white-space: normal;
+    width: calc(100% - 36px);
 }
 
 h3.mobile-nav-header a {
@@ -457,6 +458,7 @@ h3.mobile-nav-header a:hover {
 .mobile-nav-expand {
   float: right;
   padding-top: 12px;
+  width: 22px;
 }
 
 .mobile-nav-expand-icon {
