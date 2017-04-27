@@ -19,12 +19,12 @@ How to install
 
 Important Notes
 ================
-* Avoid using `captions` in the `toctree` since that is not accessible to mobile
+* Avoid using ``captions`` in the ``toctree`` since that is not accessible to mobile
   navigation menus and the breadcrumbs.
-* Avoid adding subsections that are on the same page as the section to the `toctree`.
+* Avoid adding subsections that are on the same page as the section to the ``toctree``.
   Subsections are not accessible to the mobile navigation menus and breadcrumbs.
-  This can be avoided by limiting `maxdepth` for a `toctree`. Another option is
-  to set the `titlesonly` option:
+  This can be avoided by limiting ``maxdepth`` for a ``toctree``. Another option is
+  to set the ``titlesonly`` option:
 
  .. code-block:: python
 
@@ -34,9 +34,9 @@ Important Notes
          title1
          title2
 
-* More information about the `toctree` can be found at the `Sphinx documentation
+* More information about the ``toctree`` can be found at the `Sphinx documentation
   site <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_
-* The theme itself sets `html_additional_pages` to include a custom search template.
+* The theme itself sets ``html_additional_pages`` to include a custom search template.
   If you are using this to add additional pages, to avoid overriding this value, use:
 
 .. code::
@@ -45,7 +45,7 @@ Important Notes
       # Additional pages can be added here
     )
 
-* The same goes for `html_sidebars`. If you want to use different sidebar
+* The same goes for ``html_sidebars``. If you want to use different sidebar
   templates, simply set your own to override the theme's defaults. Otherwise you
   can add more by:
 
