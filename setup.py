@@ -8,8 +8,8 @@ from jupyter_alabaster_theme import __version__
 os.environ['COPYFILE_DISABLE'] = "true"
 
 # Packages
-MOD_NAME = "jupyter_alabaster_theme"
-PKGS = [x for x in find_packages() if x.split('.')[0] == MOD_NAME]
+# MOD_NAME = "jupyter_alabaster_theme"
+# PKGS = [x for x in find_packages() if x.split('.')[0] == MOD_NAME]
 
 # Helpers
 def read_file(name):
@@ -26,7 +26,7 @@ def read_file(name):
 
 # Setup
 setup(
-    name='jupyter-alabaster-theme',
+    name='jupyter_alabaster_theme',
     version=__version__,
     description='Jupyter Alabaster Theme',
     long_description=read_file("README"),
@@ -34,7 +34,8 @@ setup(
     author_email='jupyter@googlegroups.com',
     url='https://alabaster.readthedocs.io',
     license='BSD',
-
+    packages=['jupyter_alabaster_theme'],
+    include_package_data=True,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
@@ -46,14 +47,12 @@ setup(
         "Topic :: Internet",
         "Topic :: Software Development :: Documentation",
     ],
-
     install_requires=[
         "setuptools",
-        "recommonmark==0.4.0",
-        "nbsphinx",
-        "ipython"
     ],
-
-    packages=PKGS,
-    include_package_data=True,
+    entry_points = {
+        'sphinx_themes': [
+            'path = jupyter_alabaster_theme:get_path',
+        ]
+    },
 )
