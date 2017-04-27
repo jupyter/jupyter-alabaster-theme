@@ -1,0 +1,9 @@
+name: jtheme
+channels:
+  - conda-forge
+dependencies:
+- python=3.5
+- sphinx>=1.3.6,!=1.5.4
+- alabaster
+- pip:
+  - jupyter_alabaster_theme

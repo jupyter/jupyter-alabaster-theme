@@ -49,6 +49,7 @@ setup(
     ],
     install_requires=[
         "setuptools",
+        "alabaster"
     ],
     entry_points = {
         'sphinx_themes': [
