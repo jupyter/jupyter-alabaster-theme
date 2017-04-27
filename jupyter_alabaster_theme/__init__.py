@@ -14,13 +14,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 # Find packages
 #---------------------------------------------------------------------------
 
-def get_html_theme_path():
-    """Return list of HTML theme paths."""
-    cur_dir = os.path.abspath(os.path.dirname(__file__))
-    return [cur_dir]
 
-html_theme = 'jupyter'
-html_theme_path = get_html_theme_path()
 
 
 
