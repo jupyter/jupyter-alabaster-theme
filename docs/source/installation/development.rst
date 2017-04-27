@@ -3,6 +3,9 @@
 =================
 Development
 =================
+
+Running the Docs Locally
+========================
 * Fork the repository and clone it locally.
 * `cd` into the Jupyter-Alabaster-Theme directory
 * Consider using a `virtualenv` or conda `environment` to manage packages.
