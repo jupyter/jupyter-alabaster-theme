@@ -2,6 +2,9 @@
 body {
     background-color: white;
     font-weight: 400;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
     /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
     padding-top: 120px;
 }
