@@ -54,3 +54,12 @@ Important Notes
     html_sidebars.update(
       # Additional sidebars can be added here
     )
+
+_extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'nbsphinx',
+    'IPython.sphinxext.ipython_console_highlighting',
+]
