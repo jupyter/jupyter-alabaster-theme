@@ -55,22 +55,22 @@ Important Notes
       # Additional sidebars can be added here
     )
 
-_extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax',
-    'nbsphinx',
-    'IPython.sphinxext.ipython_console_highlighting',
-]
+    _extensions = [
+        'sphinx.ext.autodoc',
+        'sphinx.ext.autosummary',
+        'sphinx.ext.intersphinx',
+        'sphinx.ext.mathjax',
+        'nbsphinx',
+        'IPython.sphinxext.ipython_console_highlighting',
+    ]
 
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-source_suffix = ['.rst', '.ipynb']
+    # The suffix(es) of source filenames.
+    # You can specify multiple suffix as a list of string:
+    source_suffix = ['.rst', '.ipynb']
 
-# Conf.py import settings
-source_parsers = {}
-def init_theme():
-    from recommonmark.parser import CommonMarkParser
-    source_parsers['.md'] = CommonMarkParser
-    source_suffix.append('.md')
+    # Conf.py import settings
+    source_parsers = {}
+    def init_theme():
+        from recommonmark.parser import CommonMarkParser
+        source_parsers['.md'] = CommonMarkParser
+        source_suffix.append('.md')

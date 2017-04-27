@@ -1,17 +1,10 @@
-{%- extends "basic/layout.html" %}
+{%- extends "alabaster/layout.html" %}
 {% set extra_scripts = ["_static/js/bootstrap.min.js", "_static/js/scroll.js", "_static/js/mobile-nav.js"] %}
 {% set script_files = script_files + extra_scripts %}
 
 {%- block extrahead %}
   {{ super() }}
-  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
-  {% if theme_touch_icon %}
-    <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
-  {% endif %}
-  {% if theme_canonical_url %}
-    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
-  {% endif %}
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
   <script type= "text/javascript">
     $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -35,12 +28,12 @@
 {%- block relbar1 %}{% endblock %}
 {%- block relbar2 %}{% endblock %}
 
-{# Nav should appear before content, not after #}
 {% set bs_span_prefix = "col-md-" %}
 {%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and sidebars %}
 {%- set bs_content_width = render_sidebar and "9" or "12"%}
+
 {%- macro bsidebar() %}
-      {%- if render_sidebar %}
+    {%- if render_sidebar %}
       <div class="col-sm-4 {{ bs_span_prefix }}3">
         <div id="sidebar" class="bs-sidenav" role="complementary">
           {%- for sidebartemplate in sidebars %}
@@ -48,9 +41,10 @@
           {%- endfor %}
         </div>
       </div>
-      {%- endif %}
-  {%- endmacro %}
+    {%- endif %}
+{%- endmacro %}
 
+{# Nav should appear before content, not after #}
 {% block content %}
   {% include "navbar.html" %}
   <div class="container">
