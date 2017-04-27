@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Jupyter-Alabaster-Theme'
+project = 'Jupyter Alabaster Theme'
 copyright = 'Project Jupyter'
 author = 'Jeff Forcier, Project Jupyter, and contributors'
 
