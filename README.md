@@ -19,7 +19,7 @@ At the top of the file, add an import of the theme and call `init_theme()`:
 
 ```python
 # At the top.
-from jupyter_alabaster_theme import *
+from jupyter_alabaster_theme import init_theme
 init_theme()
 ```
 
