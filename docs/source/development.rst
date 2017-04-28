@@ -24,6 +24,7 @@ Running the Docs Locally
 
 The docs will be built in ``build/html``. They can be viewed by starting an HTTP
 server and navigating to 0.0.0.0:8000 in your web browser.
+
 .. code::
 
     python3 -m http.server
