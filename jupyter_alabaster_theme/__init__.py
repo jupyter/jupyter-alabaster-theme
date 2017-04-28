@@ -34,7 +34,7 @@ def setup(app):
         app.config.html_sidebars = {}
     if '**' not in app.config.html_sidebars:
         app.config.html_sidebars['**'] = []
-    app.config.html_sidebars['**'].append('custom_navigation.html')
+    app.config.html_sidebars['**'].append('navigation.html')
 
     # Return information
     return {'version': __version__,
