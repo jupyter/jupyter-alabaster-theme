@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "css:footer": "postcss jupyter_alabaster_theme/static/pcss/footer.pcss -o jupyter_alabaster_theme/static/css/footer.css",
+        "css:jupytertheme": "postcss jupyter_alabaster_theme/static/pcss/jupytertheme.pcss -o jupyter_alabaster_theme/static/css/jupytertheme.css",
+        "css:mobile_sidebar": "postcss jupyter_alabaster_theme/static/pcss/mobile_sidebar.pcss -o jupyter_alabaster_theme/static/css/mobile_sidebar.css",
+        "css": "npm run css:footer && npm run css:jupytertheme && npm run css:mobile_sidebar"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "postcss": "^5.2.17",
+        "postcss-cli": "^3.2.0",
+        "postcss-cssnext": "^2.10.0"
+    },
+    "postcss": {
+        "plugins": {
+            "postcss-cssnext": {}
+        }
+    }
+}
