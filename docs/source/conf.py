@@ -121,7 +121,7 @@ html_theme = 'jupyter_alabaster_theme'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-# html_theme_path = ['../..']
+# html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -158,13 +158,11 @@ html_theme = 'jupyter_alabaster_theme'
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-html_sidebars = {
-    '**': ['custom_navigation.html']
-}
+# html_sidebars = {}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
-html_additional_pages = {}
+# html_additional_pages = {}
 
 # If false, no module index is generated.
 #html_domain_indices = True

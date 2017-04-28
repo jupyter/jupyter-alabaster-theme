@@ -1,39 +1,41 @@
 """Jupyter Alabaster theme."""
+
+from __future__ import absolute_import, print_function
+
 import os
 import subprocess
 import sys
 
 
-#---------------------------------------------------------------------------
-# Find packages
-#---------------------------------------------------------------------------
-
-# Set the version of the jupyter_alabaster_theme
-__version_info__ = (0, 2, 0)
-__version__ = '.'.join(map(str, __version_info__))
-
-
-#---------------------------------------------------------------------------
-# Configure the Sphinx Application
-#---------------------------------------------------------------------------
-
+# Import version information
+from .version import version_info, __version__
 
 
 def get_path():
-    """
-    Shortcut for users whose theme is next to their conf.py.
-    """
-    # Theme directory is defined as our parent directory
+    """Return the absolute path of the parent directory of this file."""
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
 def update_context(app, pagename, templatename, context, doctree):
+    """Update the Sphinx context to include the version of this package."""
     context['jupyter_alabaster_theme_version'] = __version__
 
 
 def setup(app):
+    """Configure the Sphinx application object.
+
+    See the API in http://www.sphinx-doc.org/en/stable/extdev/appapi.html
+    """
+    # Setup event for html-path-context
     app.connect('html-page-context', update_context)
 
+    # Safely add custom_navigation.html to the html_sidebars
+    if not hasattr(app.config, 'html_sidebars'):
+        app.config.html_sidebars = {}
+    if '**' not in app.config.html_sidebars:
+        app.config.html_sidebars['**'] = []
+    app.config.html_sidebars['**'].append('custom_navigation.html')
+
+    # Return information
     return {'version': __version__,
             'parallel_read_safe': True}
-

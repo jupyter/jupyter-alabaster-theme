@@ -1,15 +1,23 @@
 #!/usr/bin/env python
+# coding: utf-8
+
+from __future__ import absolute_import, print_function
+
 import os
 from setuptools import setup, find_packages
-from jupyter_alabaster_theme import __version__
+
 
 # Environment and packages
 # Don't copy Mac OS X resource forks on tar/gzip.
 os.environ['COPYFILE_DISABLE'] = "true"
 
-# Packages
-# MOD_NAME = "jupyter_alabaster_theme"
-# PKGS = [x for x in find_packages() if x.split('.')[0] == MOD_NAME]
+# The absolute path to this file
+here = os.path.abspath(os.path.dirname(__file__))
+
+# Grab the version information without importing the package
+ns = {}
+with open(os.path.join(here, 'jupyter_alabaster_theme', 'version.py')) as f:
+    exec(f.read(), {}, ns)
 
 # Helpers
 def read_file(name):
@@ -27,7 +35,7 @@ def read_file(name):
 # Setup
 setup(
     name='jupyter_alabaster_theme',
-    version=__version__,
+    version=ns['__version__'],
     description='Jupyter Alabaster Theme',
     long_description=read_file("README"),
     author='Jeff Forcier, Project Jupyter, and contributors',
@@ -51,7 +59,7 @@ setup(
         "setuptools",
         "alabaster"
     ],
-    entry_points = {
+    entry_points={
         'sphinx_themes': [
             'path = jupyter_alabaster_theme:get_path',
         ]
