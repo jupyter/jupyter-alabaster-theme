@@ -1,6 +1,6 @@
-/* Navbar styling */
+/* navbar styling */
 .navbar {
-    background-color: white;
+  background-color: white;
     -webkit-transition: .2s;
     border: none;
     margin-bottom: 0px;
@@ -12,51 +12,53 @@
     & .navbar-logo {
         height: 45px;
     }
+
+    &-fixed-top .nav {
+      padding: 15px 0;
+    }
+
+    &-navbar-fixed-top &-brand {
+      padding: 0 15px;
+    }
+
+    &-header .icon-bar {
+      background-color: black;
+    }
+
+    &-nav > li > &-active {
+      color: #E46E2E;
+    }
+
+    &-scroll {
+        -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+        -webkit-animation-name: smooth;
+                animation-name: smooth;
+          box-shadow: 1px 1px 1px #999;
+    }
 }
 
-.navbar-fixed-top .nav {
-    padding: 15px 0;
-}
-
-.navbar-fixed-top .navbar-brand {
-    padding: 0 15px;
-}
-
-.navbar-header .icon-bar {
-    background-color: black;
-}
-
-.navbar-nav > li > .navbar-active {
-    color: #E46E2E;
-}
-
-.navbar-scroll {
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-name: smooth;
-            animation-name: smooth;
-    box-shadow: 1px 1px 1px #999;
-}
-
-.nav > li > a {
+.nav {
+  & > li > a {
     font-size: 16px;
     padding: 12px 16px 10px;
-}
 
-.nav > li > a:hover {
-    background-color: transparent;
-    color: #E46E2E;
-    -webkit-transition: .2s;
-}
+    &:hover {
+      background-color: transparent;
+      color: #E46E2E;
+      -webkit-transition: .2s;
+    }
 
-.nav > li > a:focus {
-    background-color: white;
-}
+    &:focus {
+      background-color: white;
+    }
 
-.nav > li > a:active {
-    background-color: #F8F8F8;
-}
+    &:active {
+      background-color: #F8F8F8;
+    }
 
-.nav > li > a:visited {
-    background-color: #F8F8F8;
+    &:visted {
+      background-color: #F8F8F8;
+    }
+  }
 }
