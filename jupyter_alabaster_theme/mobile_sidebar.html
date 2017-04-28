@@ -26,6 +26,14 @@
   </div>
 
   <div id="sectionList" class="collapse">
+    <div class="dropdown">
+      {# First item navigation should be project home page #}
+      <div type = "button" class = "btn mobile-nav-section">
+        <h3 class="mobile-nav-header">
+          <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+        </h3>
+      </div>
+    </div>
     {# Skip the first section as it is a '\n' resulting from splitting the string #}
     {% for section in list[1:] %}
       {# Split each 1st level child into subSections that may contain a 2nd level children #}

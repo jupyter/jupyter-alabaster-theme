@@ -40,7 +40,7 @@ setup(
     long_description=read_file("README"),
     author='Jeff Forcier, Project Jupyter, and contributors',
     author_email='jupyter@googlegroups.com',
-    url='https://alabaster.readthedocs.io',
+    url='http://jupyter-alabaster-theme.readthedocs.io/en/latest/index.html',
     license='BSD',
     packages=['jupyter_alabaster_theme'],
     include_package_data=True,

@@ -29,6 +29,9 @@ def setup(app):
     # Setup event for html-path-context
     app.connect('html-page-context', update_context)
 
+    # Add in correct Date Time format for Documentation footer
+    app.config.html_last_updated_fmt = "%a, %b %d, %Y"
+
     # Safely add custom_navigation.html to the html_sidebars
     if not hasattr(app.config, 'html_sidebars'):
         app.config.html_sidebars = {}
