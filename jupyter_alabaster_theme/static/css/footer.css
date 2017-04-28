@@ -2,36 +2,33 @@
 .custom-footer {
     background-color: #979797;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.6
 }
-
 .custom-footer p {
     color: white;
-    padding-top: 10px;
+    padding-top: 10px
 }
-
-.custom-footer li{
+.custom-footer li {
     color: white;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none
 }
-
 .custom-footer a {
     color: white;
-    text-decoration: none;
+    text-decoration: none
 }
-
 .custom-footer li::after {
-    content:" |";
+    content: " |"
 }
-
 .custom-footer li:last-of-type::after {
-    content:"";
+    content: ""
 }
-
 .custom-footer-text {
     margin-left: 0;
-    padding-left: 0;
+    padding-left: 0
+}
+
+div {
 }
 
 div.footer {
@@ -39,11 +36,11 @@ div.footer {
     margin-top: -2em;
     text-align: right;
     width: auto;
-    margin-right: 10px;
+    margin-right: 10px
 }
 
 div.footer a:hover {
-    color: #0095C4;
+    color: #0095C4
 }
 
 .footer-text {
