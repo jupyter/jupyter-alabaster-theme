@@ -1,0 +1,94 @@
+/* Mobile Navbar Styling */
+.mobile-nav-current {
+  max-width: 90%;
+  display: inline-block;
+}
+
+.mobile-nav-current-dropdown {
+    padding: 16px 20px;
+    border: 2px solid #BDBDBD;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.mobile-nav-current-section {
+    margin: 0px;
+    color: #757575;
+    padding-bottom: 4px;
+    font-weight: 400;
+}
+
+.mobile-nav-current-page {
+    margin-top: 0px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.mobile-nav-section {
+  padding: 0px;
+  width: 100%;
+}
+
+.mobile-nav-section:active {
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+.mobile-nav-header {
+    font-size: 20px;
+    margin: 12px 0px;
+    float: left;
+    text-align: left;
+    white-space: normal;
+    width: calc(100% - 36px);
+}
+
+h3.mobile-nav-header a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+h3.mobile-nav-header a:hover {
+  outline: none;
+  border: none;
+}
+
+.mobile-nav-items {
+  padding-left: 16px;
+}
+
+.mobile-nav-items .toctree-l1 .current {
+  color: #F37726;
+  font-weight: 500;
+}
+
+.mobile-nav-items .toctree-l2 .current {
+  color: #F37726;
+  font-weight: 500;
+}
+
+.top-mobile-nav-expand {
+  float: right;
+  /* 17.5px is half of the height of the top navigation box */
+  padding-top: 17.5px;
+}
+
+.mobile-nav-expand {
+  float: right;
+  padding-top: 12px;
+  width: 22px;
+}
+
+.mobile-nav-expand-icon {
+    transition: .2s ease-in-out;
+    float: right;
+}
+
+.close-icon {
+  /* Add this class to a mobile nav item expanded to rotate */
+  -webkit-transform: rotate(45deg);
+  -mox-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
