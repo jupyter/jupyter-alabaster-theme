@@ -540,6 +540,7 @@ h3.mobile-nav-header a:hover {
 }
 .bs-sidenav .toctree-l1 ul {
     margin: 12px 0px 12px 12px;
+    padding: 0px;
 }
 /* Second Level Nav Link in Sidebar */
 .toctree-l2 {
@@ -556,7 +557,9 @@ h3.mobile-nav-header a:hover {
 
 .bs-sidenav ul {
     margin-left: 0px;
+    padding: 0px;
 }
+
 .bs-sidenav .reference {
     color: #757575;
     border-bottom: none;
