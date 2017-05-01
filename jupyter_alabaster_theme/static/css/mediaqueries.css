@@ -126,11 +126,8 @@
     }
 
     .navbar {
+      border-bottom: 1px solid #E0E0E0
     }
-
-    .navbar {
-    border-bottom: 1px solid #E0E0E0;
-  }
 
     .navbar-header {
     margin-bottom: 0;
@@ -169,7 +166,7 @@
         float: left;
     }
 }
-@media(max-width:509px) {
+@media (max-width:509px) {
     .follow {
         float: none !important;
         display: block;
