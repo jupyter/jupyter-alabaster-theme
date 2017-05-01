@@ -1,4 +1,8 @@
 @import 'css/bootstrap.min.css';
 @import 'css/jupytertheme.css';
+@import 'css/navbar.css';
 @import 'css/footer.css';
+@import 'css/search.css';
 @import 'css/mobile_sidebar.css';
+@import 'css/mediaqueries.css';
+@import 'css/sidebar.css';

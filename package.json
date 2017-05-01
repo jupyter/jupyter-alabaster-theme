@@ -1,9 +1,13 @@
 {
     "scripts": {
+        "css:navbar": "postcss jupyter_alabaster_theme/static/pcss/navbar.pcss -o jupyter_alabaster_theme/static/css/navbar.css",
         "css:footer": "postcss jupyter_alabaster_theme/static/pcss/footer.pcss -o jupyter_alabaster_theme/static/css/footer.css",
+        "css:search": "postcss jupyter_alabaster_theme/static/pcss/search.pcss -o jupyter_alabaster_theme/static/css/search.css",
         "css:jupytertheme": "postcss jupyter_alabaster_theme/static/pcss/jupytertheme.pcss -o jupyter_alabaster_theme/static/css/jupytertheme.css",
         "css:mobile_sidebar": "postcss jupyter_alabaster_theme/static/pcss/mobile_sidebar.pcss -o jupyter_alabaster_theme/static/css/mobile_sidebar.css",
-        "css": "npm run css:footer && npm run css:jupytertheme && npm run css:mobile_sidebar"
+        "css:sidebar": "postcss jupyter_alabaster_theme/static/pcss/sidebar.pcss -o jupyter_alabaster_theme/static/css/sidebar.css",
+        "css:mediaqueries": "postcss jupyter_alabaster_theme/static/pcss/mediaqueries.pcss -o jupyter_alabaster_theme/static/css/mediaqueries.css",
+        "css": "npm run css:navbar && npm run css:footer && npm run css:search && npm run css:jupytertheme && npm run css:mobile_sidebar && npm run css:sidebar && npm run css:mediaqueries"
     },
     "dependencies": {},
     "devDependencies": {
