@@ -1,4 +1,6 @@
+// Import CSS from inherited theme alabaster
 @import 'alabaster.css';
+// Import other CSS files
 @import 'css/bootstrap.min.css';
 @import 'css/jupytertheme.css';
 @import 'css/navbar.css';
