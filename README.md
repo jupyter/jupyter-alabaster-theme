@@ -17,7 +17,7 @@ pip install jupyter_alabaster_theme
 ## Configuration
 
 To use the theme in your Sphinx based documentation, follow these steps. For further
-details, see the documentation for this theme [here]().
+details, see the documentation for this theme [here](http://jupyter-alabaster-theme.readthedocs.io/en/latest/).
 
 ### Edit `conf.py`
 
