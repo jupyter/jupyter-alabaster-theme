@@ -6,16 +6,51 @@ User
 
 How to install
 ===============
-* ``pip install jupyter_alabaster_theme``
-* Edit your ``conf.py`` file to point to the theme:
+To use this theme on any Sphinx based documentation, follow these steps:
+
+Install the ``jupyter_alabaster_theme`` package using pip:
+
+.. code::
+
+    pip install jupyter_alabaster_theme
+
+Edit your ``conf.py`` file:
+
+1. Set the theme to ``jupyter_alabaster_theme``:
 
 .. code-block:: python
 
-    # At the top
-    from jupyter_alabaster_theme import *
-    init_theme()
-    # ...
-    # Comment out the `html_theme =` line
+    html_theme = 'jupyter_alabaster_theme'
+
+2. Add ``jupyter_alabaster_theme`` to the list of extensions:
+
+.. code-block:: python
+
+    extensions = [
+       ...
+       'jupyter_alabaster_theme',
+    ]
+
+3. At the bottom of ``conf.py``, if the following block of code is present,
+remove it:
+
+.. code-block:: python
+
+    if not on_rtd:
+       # only import and set the theme if we're building docs locally
+       import sphinx_rtd_theme
+       html_theme = 'sphinx_rtd_theme'
+       html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+Update Documentation Dependencies
+
+To get your documentation to build, you will need to update its build
+dependencies. Update your ``environment.yml`` or ``requirements.txt`` to depend on
+``jupyter_alabaster_theme`` to get the build working on ReadTheDocs.
+Note, we have not yet released a `Conda <https://conda.io/docs/intro.html>`_
+package for this theme, so you will need to list it in the ``environment.yml``
+file under the ``pip`` section.
+
 
 Important Notes
 ================
@@ -36,18 +71,10 @@ Important Notes
 
 * More information about the ``toctree`` can be found at the `Sphinx documentation
   site <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_
-* The theme itself sets ``html_additional_pages`` to include a custom search template.
-  If you are using this to add additional pages, to avoid overriding this value, use:
 
-.. code::
-
-    html_additional_pages.update(
-      # Additional pages can be added here
-    )
-
-* The same goes for ``html_sidebars``. If you want to use different sidebar
-  templates, simply set your own to override the theme's defaults. Otherwise you
-  can add more by:
+* The theme itself sets ``html_sidebars`` to include a custom sidebar navigation
+  template. If you want to use different sidebar templates, simply set your own
+  in ``conf.py``, to override the theme's defaults. Otherwise you can add more by:
 
 .. code::
 
