@@ -45,7 +45,7 @@ To Add a Post CSS file:
 2. Add ``@mimport foo.css`` to ``index.css``.
 
 3. In ``package.json`` add a script with a name ``css:foo`` and action
-``"postcss jupyter_alabaster_theme/static/pcss/foo.pcss -o jupyter_alabaster_theme/static/css/foo.css",``
+   ``"postcss jupyter_alabaster_theme/static/pcss/foo.pcss -o jupyter_alabaster_theme/static/css/foo.css",``
 
 4. Update ``css`` script in ``package.json`` to include ``npm run css:foo``.
 
@@ -68,12 +68,13 @@ Modifying Sphinx templates:
 
 3. Install the package:
 
+
 .. code::
 
     pip install .
 
-4. Re-build the Sphinx documentation (from the appropriate directory) and refresh
-your browser.
+4. Re-build the Sphinx documentation (from the appropriate directory) and
+   refresh your browser.
 
 .. code::
 
