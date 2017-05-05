@@ -242,3 +242,10 @@ table.footnote {
 table.footnote td {
     border: 0 !important;
 }
+
+/* override bootstrap defaults */
+.code {
+  background-color: transparent;
+  padding: 0px;
+  color: inherit;
+}
