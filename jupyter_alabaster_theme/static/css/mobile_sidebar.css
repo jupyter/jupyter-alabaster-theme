@@ -22,11 +22,11 @@
   font-weight: 500;
   margin-bottom: 0px;
 }
-.mobile-nav-current-section {
+.mobile-nav-section {
   padding: 0px;
   width: 100%;
 }
-.mobile-nav-current-section:active {
+.mobile-nav-section:active {
   -o-box-shadow: none;
   box-shadow: none;
 }
@@ -38,13 +38,13 @@
   white-space: normal;
   width: calc(100% - 36px);
 }
-h3..mobile-nav-header a {
+h3.mobile-nav-header a {
   text-decoration: none;
   border: none;
   outline: none;
   color: inherit;
 }
-h3..mobile-nav-header a:hover {
+h3.mobile-nav-header a:hover {
   outline: none;
   border: none;
 }
