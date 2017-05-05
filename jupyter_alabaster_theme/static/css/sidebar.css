@@ -122,7 +122,16 @@
     margin-left: 0px;
 }
 
-.docs-breadcrumbs-item a {
+.docs-breadcrumb-item {
+  list-style-type: none;
+  display: inline;
+  color: white;
+  font-size: 16px;
+  line-height: 2.2;
+  height: 24px
+}
+
+.docs-breadcrumb-item a {
     color: white;
     letter-spacing: .8px;
 }
