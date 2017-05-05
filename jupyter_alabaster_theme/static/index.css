@@ -1,8 +1,7 @@
-//Import Bootstrap first
-@import 'css/bootstrap.min.css';
-// Import CSS from inherited theme alabaster, this also overrides bootstrap defaults
+/* Import CSS from inherited theme alabaster */
 @import 'alabaster.css';
-// Import other CSS files
+/* Import other CSS files */
+@import 'css/bootstrap.min.css';
 @import 'css/jupytertheme.css';
 @import 'css/navbar.css';
 @import 'css/footer.css';
