@@ -32,8 +32,8 @@ Edit your ``conf.py`` file:
     ]
 
 3. At the bottom of ``conf.py``, if the following block of code is present,
-   remove or modify it, otherwise `sphinx_rtd_theme` or the default readthedocs
-    will be set:
+   remove or modify it, otherwise ``sphinx_rtd_theme`` or the default readthedocs
+   theme will be set:
 
 .. code-block:: python
 
@@ -52,7 +52,7 @@ Edit your ``conf.py`` file:
         from subprocess import check_call as sh
         sh(['make', 'rest-api'], cwd=docs)
 
-Here's an option for modifying the code block above:
+- Here's an option for modifying the code block above:
 
 .. code-block:: python
 
@@ -63,7 +63,6 @@ Here's an option for modifying the code block above:
     # Don't need to set html_theme if done earlier in conf.py
     if on_rtd:
         # Do anything else needed to build documentation on RTD
-        
 
 
 Update Documentation Dependencies
