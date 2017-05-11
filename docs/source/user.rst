@@ -31,16 +31,42 @@ Edit your ``conf.py`` file:
        'jupyter_alabaster_theme',
     ]
 
-3. At the bottom of ``conf.py``, if the following block of code is present,
-   remove it:
+3. At the bottom of ``conf.py``, edit the following code block to select the
+   desired theme to use for any local builds (such as during development):
 
 .. code-block:: python
 
+    # -- Read The Docs --------------------------------------------------------
+
+    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
     if not on_rtd:
-       # only import and set the theme if we're building docs locally
-       import sphinx_rtd_theme
-       html_theme = 'sphinx_rtd_theme'
-       html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+        # only import and set the theme if we're building docs locally
+        import sphinx_rtd_theme
+        html_theme = 'sphinx_rtd_theme'
+        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+    else:
+        # readthedocs.org uses their theme by default, so no need to specify it
+        # Do anything else needed to build documentation on RTD
+        from subprocess import check_call as sh
+        sh(['make', 'rest-api'], cwd=docs)
+
+
+- To use ``sphinx_rtd_theme``: no changes are needed if you are using the code
+  block above.
+
+- To use ``jupyter_alabaster_theme``:
+
+.. code-block:: python
+
+    # -- Read The Docs --------------------------------------------------------
+
+    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+    # Don't need to set html_theme if done earlier in conf.py
+    if on_rtd:
+        # Do anything else needed to build documentation on RTD
+
 
 Update Documentation Dependencies
 
