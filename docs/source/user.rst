@@ -31,9 +31,8 @@ Edit your ``conf.py`` file:
        'jupyter_alabaster_theme',
     ]
 
-3. At the bottom of ``conf.py``, if the following block of code is present,
-   remove or modify it, otherwise ``sphinx_rtd_theme`` or the default readthedocs
-   theme will be set:
+3. At the bottom of ``conf.py``, edit the following code block to select the
+   desired theme to use for any local builds (such as during development):
 
 .. code-block:: python
 
@@ -48,11 +47,15 @@ Edit your ``conf.py`` file:
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     else:
         # readthedocs.org uses their theme by default, so no need to specify it
-        # build rest-api, since RTD doesn't run make
+        # Do anything else needed to build documentation on RTD
         from subprocess import check_call as sh
         sh(['make', 'rest-api'], cwd=docs)
 
-- Here's an option for modifying the code block above:
+
+- To use ``sphinx_rtd_theme``: no changes are needed if you are using the code
+  block above.
+
+- To use ``jupyter_alabaster_theme``:
 
 .. code-block:: python
 
