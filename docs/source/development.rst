@@ -47,7 +47,11 @@ To Add a Post CSS file:
 3. In ``package.json`` add a script with a name ``css:foo`` and action
    ``"postcss jupyter_alabaster_theme/static/pcss/foo.pcss -o jupyter_alabaster_theme/static/css/foo.css",``
 
-4. Update ``css`` script in ``package.json`` to include ``npm run css:foo``.
+Installing Post CSS and other npm dependencies
+
+.. code::
+
+    npm install
 
 To compile Post CSS into CSS:
 
