@@ -186,13 +186,6 @@ tt, code, pre {
     font-size: 96.5%;
 }
 
-/* override bootstrap defaults and use Alabaster code highlighting */
-code {
-  background-color: #ECF0F3;
-  padding: 1px 2px;
-  color: inherit;
-}
-
 a {
 }
 
