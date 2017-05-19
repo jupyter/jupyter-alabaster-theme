@@ -80,6 +80,8 @@ file under the ``pip`` section.
 
 Important Notes
 ================
+* Use one ``toctree`` in your index.rst. More toctrees can be added within sections
+  that are included in the main ``toctree``.
 * Avoid using ``captions`` in the ``toctree`` since that is not accessible to mobile
   navigation menus and the breadcrumbs.
 * Avoid adding subsections that are on the same page as the section to the ``toctree``.
@@ -97,13 +99,3 @@ Important Notes
 
 * More information about the ``toctree`` can be found at the `Sphinx documentation
   site <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_
-
-* The theme itself sets ``html_sidebars`` to include a custom sidebar navigation
-  template. If you want to use different sidebar templates, simply set your own
-  in ``conf.py``, to override the theme's defaults. Otherwise you can add more by:
-
-.. code::
-
-    html_sidebars.update(
-      # Additional sidebars can be added here
-    )
