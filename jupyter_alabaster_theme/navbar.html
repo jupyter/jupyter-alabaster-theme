@@ -5,9 +5,9 @@
   ['Blog', 'https://blog.jupyter.org'], ['Donate']
 ] %}
 {% set pages = {'Install': 'install.html', 'About': 'about.html', 'Resources' : 'community.html',
-  'Widgets': 'widgets.html', 'Donate': 'donate.html' }
+  'Documentation': 'documentation.html', 'Widgets': 'widgets.html', 'Donate': 'donate.html' }
 %}
-{% set baseurl = 'http://jupyter.org' %}
+{% set baseurl = 'https://jupyter.org' %}
 <nav class="navbar navbar-fixed-top" role="navigation" id="navbar" >
         <div class="navbar-inner">
         <div class="container">
@@ -34,7 +34,7 @@
                       {% else %}
                         {% if name[0] == 'Documentation' %}
                           <li>
-                            <a href="{{ pathto('index') }}"  class="tab navbar-active">{{ name[0] }}</a>
+                            <a href="{{ baseurl }}/{{ pages[name[0]] }}"  class="tab navbar-active">{{ name[0] }}</a>
                           </li>
                         {% else %}
                           <li>
