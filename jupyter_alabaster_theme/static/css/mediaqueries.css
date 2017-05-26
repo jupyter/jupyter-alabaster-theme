@@ -142,13 +142,13 @@
     margin-top: 6px;
   }
 
+    .navbar .navbar-logo {
+    height: 36px;
+    margin-top: 8px;
+  }
+
     .docs-desktop-nav {
       display: none;
-    }
-
-    .navbar .navbar-logo {
-      height: 36px;
-      margin-top: 8px;
     }
 
     .nav>li>a {
